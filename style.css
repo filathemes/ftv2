@@ -1276,6 +1276,7 @@ a {
   display: block;
   width: 100%;
   text-align: center;
+  text-decoration: none;
   border-radius: 3px;
   cursor: pointer;
   outline: 0;
@@ -1288,12 +1289,15 @@ a {
     border-color: #3496ff;
     margin-bottom: 0; }
     .single-download .edd-btn-group a.buy_main_pro:hover, .single-download .edd-btn-group .edd-submit.buy_main_pro:hover {
-      background-color: #ff5982;
-      border-color: #ff5982; }
+      background-color: transparent;
+      border-color: #3496ff;
+      color: #3496ff; }
   .single-download .edd-btn-group a:hover, .single-download .edd-btn-group .edd-submit:hover {
     text-decoration: none;
-    background-color: #3496ff;
-    border-color: #3496ff; }
+    background-color: transparent;
+    color: #ff5982;
+    border-color: #ff5982;
+    padding-left: 40px; }
 
 .single-download .btns-group {
   width: 100%;
@@ -1390,6 +1394,19 @@ a {
   .th-feature-row span {
     color: #F44336;
     letter-spacing: 1px; }
+  .th-feature-row a.theme-lightbox {
+    display: block;
+    float: left;
+    max-width: 300px;
+    margin-right: 1.5em; }
+    .th-feature-row a.theme-lightbox span {
+      font-size: 12px;
+      letter-spacing: 0;
+      color: #000;
+      text-align: center;
+      width: 100%;
+      display: block;
+      font-weight: 500; }
 
 ul.tabs {
   margin: 0;

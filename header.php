@@ -60,11 +60,22 @@
 			if ( !is_front_page() ) { 
                 echo '<div class="page-header">';
 
+                    $current_user = wp_get_current_user();
+                    
                     if ( is_singular('docs') ) {
                         echo '<h1 class="entry-title">Documentation</h1>';
                     } 
+                    
+                    elseif ( is_page_template( array( 'template-member-dashboard.php' ) ) ) {
+                        ?>
+                        <h1><?php echo sprintf( __('Howdy, %s', 'filathemes'), $current_user->user_firstname ) ?></h1>
+                        <p><?php _e('Welcome to your FilaThemes Dashboard.', 'filathemes') ?></p>
 
-                    if( is_singular('download') ) {
+                        <?php
+                    } 
+                    
+                    elseif( is_singular('download') ) {
+                        the_title( '<h1 class="entry-title">', '</h1>' ); 
                         echo '<p>' . get_field( 'theme_short_description', $post->ID ) . '</p>';
                         ?>
                         <div class="banner_meta">
@@ -73,19 +84,16 @@
                         </div>
                         <?php
                     }
-
-                    $current_user = wp_get_current_user();
-                    if ( is_page_template( array( 'template-member-dashboard.php' ) ) ) {
-                        ?>
-                        <h1><?php echo sprintf( __('Howdy, %s', 'filathemes'), $current_user->user_firstname ) ?></h1>
-                        <p><?php _e('Welcome to your FilaThemes Dashboard.', 'filathemes') ?></p>
-
-                        <?php
-                    }
-
+                    
                     else { 
                         the_title( '<h1 class="entry-title">', '</h1>' ); 
                     }
+
+                    
+
+                    
+
+                    
 
 				echo '</div>';
 			} 

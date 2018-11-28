@@ -119,6 +119,7 @@ class FT_Element_Features extends Widget_Base {
                 $output .= '<img class="alignleft" src="'.$imgurl[0].'" width="300" height="200" /> ' ;
 
                 if( 'yes' === $feature['enable_lightbox'] && $img_lightbox_url ) {
+                    $output .= '<span>Click to view large image</span>';
                     $output .= '</a>';
                 }
 
